@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_account"
+        android:icon="@drawable/ic_account_box_black_24dp"
+        android:title="Main">
+    </item>
+
+    <item
+        android:id="@+id/ic_fitness"
+        android:icon="@drawable/ic_fitness_center_black_24dp"
+        android:title="Events">
+    </item>
+
+    <item
+        android:id="@+id/ic_setting"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="Settings">
+    </item>
+
+</menu>
