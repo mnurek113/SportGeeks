@@ -1,14 +1,16 @@
-package com.code.knab.sportgeeks;
+package com.code.knab.sportgeeks.ui.settings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class LoginActivity extends AppCompatActivity {
+import com.code.knab.sportgeeks.R;
+
+public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_settings);
     }
 }
