@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1096349239478",
+    "firebase_url": "https://sportgeeks-9c468.firebaseio.com",
+    "project_id": "sportgeeks-9c468",
+    "storage_bucket": "sportgeeks-9c468.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096349239478:android:dc87754d493e4f3b",
+        "android_client_info": {
+          "package_name": "com.code.knab.sportgeeks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096349239478-l6duts1l18hclaqoeogjc4hopbf7iq56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6SOCIblefG8bf45RPF016H5d7qOyJiqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096349239478-l6duts1l18hclaqoeogjc4hopbf7iq56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
