@@ -6,30 +6,47 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".EventsActivity">
-
     <RelativeLayout
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:background="@color/colorPrimary">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Events Screen"
-            android:textSize="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/textColorPrimary"/>
+        android:layout_height="match_parent">
+         <RelativeLayout
+             android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary"
+             android:id="@+id/events_bar"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Events Screen"
+                android:textSize="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/textColorPrimary"/>
 
+
+
+        </RelativeLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom_navigation"
+            android:id="@+id/events_fragment_container"
+            android:layout_below="@+id/events_bar">
+
+        </ScrollView>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+
+            android:background="@color/colorPrimaryDark"
+            app:itemIconTint="@color/textColorPrimary"
+            app:itemTextColor="@color/textColorPrimary"
+            app:menu="@menu/bottom_navigation_menu" />
     </RelativeLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@color/colorPrimaryDark"
-        app:itemIconTint="@color/textColorPrimary"
-        app:itemTextColor="@color/textColorPrimary"
-        app:menu="@menu/bottom_navigation_menu" />
 
 </FrameLayout>
