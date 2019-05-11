@@ -7,4 +7,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_event_head_text">Dodaj Wydarzenie!</string>
+    <string name="add_event_button">Dodaj wydarzenie</string>
+    <string name="add_event_name_text">Nazwa Wydarzenia</string>
+    <string name="add_sport_type_menu">Dyscyplina</string>
 </resources>
