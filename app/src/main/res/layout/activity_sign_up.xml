@@ -37,43 +37,53 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wiek"/>
-            <NumberPicker
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"></NumberPicker>
-        </LinearLayout>
-        </LinearLayout>
-        <!--<com.google.android.material.textfield.TextInputLayout
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:hint="@string/hint_surname"
+            android:hint="@string/hint_age"
             app:errorEnabled="true">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="10dp">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:maxLines="1" />
+                android:text="Płeć"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mężczyzna"
+                    android:textSize="10dp"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kobieta"
+                    android:textSize="10dp"/>
+            </RadioGroup>
+        </LinearLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
--->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

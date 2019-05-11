@@ -15,4 +15,5 @@
     <string name="hint_surname">Nazwisko</string>
     <string name="hint_password">Hasło</string>
     <string name="hint_repeat_password">Powtórz hasło</string>
+    <string name="hint_age">Wiek</string>
 </resources>
