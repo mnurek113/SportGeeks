@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">SportGeeks</string>
     <string name="hint_login">Adres email</string>
-    <string name="hint_password">Hasło</string>
     <string name="login_button_text">Zaloguj</string>
     <string name="signUp_button_text">Rejestracja</string>
 
@@ -11,4 +10,9 @@
     <string name="add_event_button">Dodaj wydarzenie</string>
     <string name="add_event_name_text">Nazwa Wydarzenia</string>
     <string name="add_sport_type_menu">Dyscyplina</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="hint_user_name">Nazwa użytkownika</string>
+    <string name="hint_surname">Nazwisko</string>
+    <string name="hint_password">Hasło</string>
+    <string name="hint_repeat_password">Powtórz hasło</string>
 </resources>
