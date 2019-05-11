@@ -1,6 +1,6 @@
 package com.code.knab.sportgeeks;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class EventsActivity extends AppCompatActivity {
