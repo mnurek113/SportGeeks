@@ -5,7 +5,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.google.gms.google-services'
 android {
+    buildToolsVersion '28.0.2'
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.code.knab.sportgeeks"
@@ -72,6 +75,9 @@ dependencies {
     implementation 'com.google.vr:sdk-panowidget:1.120.0'
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.1'
 
     //TEST******************************************************************************************
 
