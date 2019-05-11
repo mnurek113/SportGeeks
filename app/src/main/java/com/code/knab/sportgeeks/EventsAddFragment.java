@@ -22,17 +22,7 @@ public class EventsAddFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_events_add,container,false);
 
 
-        String[] SPORTS = new String[] {"Koszykówka", "Siatkówka", "Piłka nożna"};
 
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(
-                        getContext(),
-                        R.layout.dropdown_menu_popup_item,
-                        SPORTS);
-
-        AutoCompleteTextView editTextFilledExposedDropdown =
-                view.findViewById(R.id.add_event_type_menu);
-        editTextFilledExposedDropdown.setAdapter(adapter);
 
         return view;
     }

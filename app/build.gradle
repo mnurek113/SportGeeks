@@ -5,11 +5,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.google.gms.google-services'
 android {
+    buildToolsVersion '28.0.2'
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.code.knab.sportgeeks"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -73,14 +76,20 @@ dependencies {
     implementation 'com.google.vr:sdk-panowidget:1.120.0'
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    //Room
+    implementation "androidx.room:room-runtime:2.0.0-alpha1"
+    annotationProcessor "androidx.room:room-compiler:2.0.0-alpha1"
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.1'
 
     //TEST******************************************************************************************
 
     testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-core:$mockito_version"
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
-
-
+    implementation ('com.google.firebase:firebase-core:16.0.4') {
+        exclude group: 'com.android.support'
+    }
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test:rules:1.0.1'
     androidTestImplementation "org.mockito:mockito-core:$mockito_version"
