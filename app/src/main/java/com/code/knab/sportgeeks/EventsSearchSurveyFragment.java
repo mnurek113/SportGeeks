@@ -23,7 +23,9 @@ import android.widget.Toast;
  */
 public class EventsSearchSurveyFragment extends Fragment {
 
-    private ImageButton eventsSearchSurveyButton;
+    private ImageButton eventsSearchSurveyNextButton;
+    private ImageButton eventsSearchSurveyPrvsButton;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -71,12 +73,20 @@ public class EventsSearchSurveyFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event_search_survey, container, false);
 
-        eventsSearchSurveyButton= (ImageButton) view.findViewById(R.id.eventsSearchSurveyNextScrBtn);
-        eventsSearchSurveyButton.setOnClickListener(new View.OnClickListener() {
+        eventsSearchSurveyNextButton= (ImageButton) view.findViewById(R.id.eventsSearchSurveyNextScrBtn);
+        eventsSearchSurveyNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Going to eventsSearchMapScreen", Toast.LENGTH_SHORT).show();
+                ((EventsSearchActivity)getActivity()).setEventsSearchViewPager(0);
+            }
+        });
+        eventsSearchSurveyPrvsButton = (ImageButton) view.findViewById(R.id.eventsSearchSurveyPrvsScrBtn);
+        eventsSearchSurveyPrvsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Going to eventsSearchInfoScreen", Toast.LENGTH_SHORT).show();
-                ((EventsSearchActivity)getActivity()).setEventsSearchViewPager(0);
+                ((EventsSearchActivity)getActivity()).setEventsSearchViewPager(1);
             }
         });
         return view;

@@ -27,7 +27,6 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeMVP.Vie
     private WelcomePresenter presenter;
 
     private Long userId;
-
     private BottomNavigationView bottomNavigationView;
 
     @Override
@@ -55,14 +54,17 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeMVP.Vie
 
             switch (item.getItemId()) {
                 case R.id.ic_account:
-
-                    break;
-                case R.id.ic_fitness:
-                    Intent intent = new Intent(WelcomeActivity.this, EventsActivity.class);
+                    Intent intent = new Intent(WelcomeActivity.this, WelcomeActivity.class);
                     startActivity(intent);
                     WelcomeActivity.this.finish();
                     break;
+                case R.id.ic_fitness:
+                    Intent intent2 = new Intent(WelcomeActivity.this, EventsActivity.class);
+                    startActivity(intent2);
+                    WelcomeActivity.this.finish();
+                    break;
                 case R.id.ic_setting:
+
                     break;
             }
             return false;

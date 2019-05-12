@@ -5,16 +5,12 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
-import com.google.android.gms.maps.SupportMapFragment;
 
 
 /**
@@ -35,7 +31,8 @@ public class EventsSearchInfoFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private ImageButton eventsSearchInfoButton;
+    private ImageButton eventsSearchInfoNextButton;
+    private ImageButton eventsSearchInfoPrvsButton;
 
     private OnFragmentInteractionListener mListener;
 
@@ -75,16 +72,25 @@ public class EventsSearchInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event_search_info, container, false);
 
-        eventsSearchInfoButton= (ImageButton) view.findViewById(R.id.eventsSearchInfoNextScrBtn);
-        eventsSearchInfoButton.setOnClickListener(new View.OnClickListener() {
+        eventsSearchInfoNextButton = (ImageButton) view.findViewById(R.id.eventsSearchInfoNextScrBtn);
+        eventsSearchInfoNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Going to eventsSearchInfoScreen", Toast.LENGTH_SHORT).show();
                 ((EventsSearchActivity)getActivity()).setEventsSearchViewPager(2);
             }
         });
+        eventsSearchInfoPrvsButton = (ImageButton) view.findViewById(R.id.eventsSearchInfoPrvsScrBtn);
+        eventsSearchInfoPrvsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Going to eventsSearchMapScreen", Toast.LENGTH_SHORT).show();
+                ((EventsSearchActivity)getActivity()).setEventsSearchViewPager(0);
+            }
+        });
         return view;
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
