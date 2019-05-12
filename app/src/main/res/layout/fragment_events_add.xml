@@ -45,8 +45,10 @@
             android:text="Dyscyplina:"/>
 
         <Spinner
-            android:layout_width="fill_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/add_sport_type_choice"
             />
     </RelativeLayout>
 
@@ -92,6 +94,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/add_event_diff_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/add_event_sex_container">
@@ -105,13 +108,134 @@
 
 
         <Spinner
-            android:id="@+id/planets_spinner"
-            android:layout_width="fill_parent"
+            android:id="@+id/add_diff_level_choice"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             />
 
     </RelativeLayout>
 
 
+    <RelativeLayout
+        android:id="@+id/add_start_date_container"
+        android:layout_below="@id/add_event_diff_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_choose_date_text"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="150dp"
+            android:hint="Data Rozpoczęcia"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_datePicker_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/add_choose_date_text"
+            android:text="Wybierz"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/add_start_time_container"
+        android:layout_below="@id/add_start_date_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_choose_start_time_text"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="150dp"
+            android:hint="Godzina Rozpoczęcia"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_timePicker_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/add_choose_start_time_text"
+            android:text="Wybierz"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/add_end_date_container"
+        android:layout_below="@id/add_start_time_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_choose_end_date_text"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="150dp"
+            android:hint="Data Zakończenia"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_datePicker_end_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/add_choose_end_date_text"
+            android:text="Wybierz"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/add_end_time_container"
+        android:layout_below="@id/add_end_date_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_choose_end_time_text"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="150dp"
+            android:hint="Godzina Zakończenia"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_timePicker_end_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/add_choose_end_time_text"
+            android:text="Wybierz"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
