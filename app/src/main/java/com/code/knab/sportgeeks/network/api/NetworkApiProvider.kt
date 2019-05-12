@@ -9,4 +9,6 @@ class NetworkApiProvider {
     private var retrofit:Retrofit = retrofitProvider.retrofit
 
     public fun createSignUpApi() = retrofit.create(SignUpApi::class.java)
+    public fun createSignInApi() = retrofit.create(SignInApi::class.java)
+
 }
