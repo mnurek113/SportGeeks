@@ -1,12 +1,10 @@
 package com.code.knab.sportgeeks.ui.welcome;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.code.knab.sportgeeks.R;
 import com.code.knab.sportgeeks.network.json.SportEvent;
@@ -40,12 +38,7 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeMVP.Vie
 
         userId = getIntent().getLongExtra("userId", 0);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        presenter.getEventsList(userId);
-
-        myEventsListView.setOnItemClickListener((parent, view, position, id) -> {
-
-        });
+    }
 
 
         BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
@@ -62,11 +55,12 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeMVP.Vie
                     WelcomeActivity.this.finish();
                     return true;
                 case R.id.ic_setting:
-                    return true;
+
+                    break;
             }
             return false;
         };
-    }
+    
 
     @Override
     public void listLoaded(List<SportEvent> list) {

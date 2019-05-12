@@ -1,5 +1,6 @@
 package com.code.knab.sportgeeks.network.api;
 
+import com.code.knab.sportgeeks.network.json.SearchSportEvent;
 import com.code.knab.sportgeeks.network.json.SportEvent;
 
 import java.util.List;
