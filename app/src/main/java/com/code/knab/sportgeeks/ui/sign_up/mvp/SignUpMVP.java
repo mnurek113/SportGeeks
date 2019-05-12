@@ -7,7 +7,7 @@ import io.reactivex.Single;
 public interface SignUpMVP {
 
     interface View {
-        void onSignUpSuccessful();
+        void onSignUpSuccessful(Long userId);
     }
 
     interface Presenter {

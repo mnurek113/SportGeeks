@@ -13,6 +13,9 @@ import io.reactivex.schedulers.Schedulers;
 
 public class SignUpPresenter implements SignUpMVP.Presenter {
 
+    private static final boolean SIGN_UP_BYPASS = true;
+
+
     private FirebaseAuth firebaseAuth;
 
     private SignUpMVP.View view;
@@ -30,6 +33,9 @@ public class SignUpPresenter implements SignUpMVP.Presenter {
 
     @Override
     public void signUp(String email, String password, String repeatPassword, String name, String sex) {
+        if(SIGN_UP_BYPASS == true) {
+            view.onSignUpSuccessful(1L);
+        } else
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if(task.isSuccessful())
                 compositeDisposable.add(model.signUp(new User(null,task.getResult().getUser().getUid(),name, sex, email))
@@ -43,7 +49,7 @@ public class SignUpPresenter implements SignUpMVP.Presenter {
 
         @Override
         public void onSuccess(User user) {
-            view.onSignUpSuccessful();
+            view.onSignUpSuccessful(user.getId());
         }
 
         @Override
