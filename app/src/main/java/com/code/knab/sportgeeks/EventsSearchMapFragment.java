@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -30,7 +31,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallback {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private Button eventsSearchInfoButton;
+    private ImageButton eventsSearchMapButton;
 
     SupportMapFragment mapFragment;
     private static final String ARG_PARAM1 = "param1";
@@ -79,14 +80,15 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_activity_search_map, container, false);
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-        eventsSearchInfoButton = (Button) view.findViewById(R.id.eventsSearchInfoButton);
-        eventsSearchInfoButton.setOnClickListener(new View.OnClickListener() {
+        eventsSearchMapButton = (ImageButton) view.findViewById(R.id.eventsSearchMapNextScrBtn);
+        eventsSearchMapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Going to eventsSearchInfoScreen", Toast.LENGTH_SHORT).show();
                 ((EventsSearchActivity)getActivity()).setEventsSearchViewPager(1);
             }
         });
+
         if (mapFragment ==  null) {
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
