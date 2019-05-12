@@ -43,38 +43,34 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeMVP.Vie
 
         presenter.getEventsList(userId);
 
-        myEventsListView.setOnItemClickListener((parent,view,position,id) -> {
+        myEventsListView.setOnItemClickListener((parent, view, position, id) -> {
 
         });
-    }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
 
             switch (item.getItemId()) {
                 case R.id.ic_account:
                     Intent intent = new Intent(WelcomeActivity.this, WelcomeActivity.class);
                     startActivity(intent);
                     WelcomeActivity.this.finish();
-                    break;
+                    return true;
                 case R.id.ic_fitness:
                     Intent intent2 = new Intent(WelcomeActivity.this, EventsActivity.class);
                     startActivity(intent2);
                     WelcomeActivity.this.finish();
-                    break;
+                    return true;
                 case R.id.ic_setting:
-
-                    break;
+                    return true;
             }
             return false;
-        }
-    };
-
+        };
+    }
 
     @Override
     public void listLoaded(List<SportEvent> list) {
         myEventsListAdapter = new MyEventsListAdapter(this, R.layout.my_events_adapter_view, (ArrayList<SportEvent>) list);
-
+        myEventsListView.setAdapter(myEventsListAdapter);
     }
 }
