@@ -14,9 +14,15 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.code.knab.sportgeeks.network.json.SportEvent;
+import com.code.knab.sportgeeks.ui.map.MapMVP;
+import com.code.knab.sportgeeks.ui.map.MapModel;
+import com.code.knab.sportgeeks.ui.map.MapPresenter;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+
+import java.util.List;
 
 
 /**
@@ -27,12 +33,14 @@ import com.google.android.gms.maps.SupportMapFragment;
  * Use the {@link EventsSearchMapFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallback {
+public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallback, MapMVP.View {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private ImageButton eventsSearchMapNextButton;
     private ImageButton eventsSearchMapPrvsButton;
 
+
+    private MapPresenter presenter;
 
     SupportMapFragment mapFragment;
     private static final String ARG_PARAM1 = "param1";
@@ -73,6 +81,9 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        presenter = new MapPresenter(this, new MapModel());
+
     }
 
     @Override
@@ -134,6 +145,11 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+    }
+
+    @Override
+    public void listLoaded(List<SportEvent> list) {
 
     }
 
