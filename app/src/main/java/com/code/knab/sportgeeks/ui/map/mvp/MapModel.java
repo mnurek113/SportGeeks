@@ -1,4 +1,4 @@
-package com.code.knab.sportgeeks.ui.map;
+package com.code.knab.sportgeeks.ui.map.mvp;
 
 import com.code.knab.sportgeeks.network.api.EventsOnMapApi;
 import com.code.knab.sportgeeks.network.api.NetworkApiProvider;
@@ -15,7 +15,7 @@ public class MapModel implements MapMVP.Model {
 
 
     @Override
-    public Single<List<SportEvent>> getSportEventsList(Double maxLatitude, Double minLatitude, Double maxLongitude, Double minLongitude, String gender, String sportType) {
-        return api.getSportEventsList(maxLatitude, minLatitude, maxLongitude, minLongitude, gender, sportType);
+    public Single<List<SportEvent>> getSportEventsList(Double maxLatitude, Double minLatitude, Double maxLongitude, Double minLongitude) {
+        return api.getSportEventsList(maxLatitude, minLatitude, maxLongitude, minLongitude);
     }
 }

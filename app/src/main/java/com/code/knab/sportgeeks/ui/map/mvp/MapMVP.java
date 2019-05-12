@@ -1,4 +1,4 @@
-package com.code.knab.sportgeeks.ui.map;
+package com.code.knab.sportgeeks.ui.map.mvp;
 
 import com.code.knab.sportgeeks.network.json.SportEvent;
 
@@ -12,18 +12,14 @@ public interface MapMVP {
         void getSportEventsList(Double maxLatitude,
                                 Double minLatitude,
                                 Double maxLongitude,
-                                Double minLongitude,
-                                String gender,
-                                String sportType);
+                                Double minLongitude);
     }
 
     interface Model {
         Single<List<SportEvent>> getSportEventsList(Double maxLatitude,
                                                     Double minLatitude,
                                                     Double maxLongitude,
-                                                    Double minLongitude,
-                                                    String gender,
-                                                    String sportType);
+                                                    Double minLongitude);
     }
 
     interface View {

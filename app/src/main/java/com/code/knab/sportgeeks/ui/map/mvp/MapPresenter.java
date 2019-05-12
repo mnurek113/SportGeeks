@@ -1,4 +1,4 @@
-package com.code.knab.sportgeeks.ui.map;
+package com.code.knab.sportgeeks.ui.map.mvp;
 
 import com.code.knab.sportgeeks.network.json.SportEvent;
 import com.code.knab.sportgeeks.utils.SchedulerHolders;
@@ -6,7 +6,6 @@ import com.code.knab.sportgeeks.utils.SchedulerHolders;
 import java.util.List;
 
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.observers.DisposableObserver;
 import io.reactivex.observers.DisposableSingleObserver;
 
 public class MapPresenter implements MapMVP.Presenter{
@@ -24,8 +23,8 @@ public class MapPresenter implements MapMVP.Presenter{
     }
 
     @Override
-    public void getSportEventsList(Double maxLatitude, Double minLatitude, Double maxLongitude, Double minLongitude, String gender, String sportType) {
-        compositeDisposable.add(model.getSportEventsList(maxLatitude, minLatitude, maxLongitude, minLongitude, gender, sportType)
+    public void getSportEventsList(Double maxLatitude, Double minLatitude, Double maxLongitude, Double minLongitude) {
+        compositeDisposable.add(model.getSportEventsList(maxLatitude, minLatitude, maxLongitude, minLongitude)
         .subscribeOn(schedulerHolders.subscribe())
         .observeOn(schedulerHolders.observ())
         .subscribeWith(new SportEventsObserver()));

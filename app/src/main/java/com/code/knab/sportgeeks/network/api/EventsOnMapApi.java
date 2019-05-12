@@ -14,7 +14,5 @@ public interface EventsOnMapApi {
     Single<List<SportEvent>> getSportEventsList(@Query("maxLat") Double maxLatitude,
                                                 @Query("minLat") Double minLatitude,
                                                 @Query("maxLong") Double maxLongitude,
-                                                @Query("minLong") Double minLongitude,
-                                                @Query("sport") String sportType,
-                                                @Query("gender") String gender);
+                                                @Query("minLong") Double minLongitude);
 }

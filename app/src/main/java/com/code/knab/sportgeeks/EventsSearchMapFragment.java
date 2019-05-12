@@ -13,9 +13,6 @@ import com.code.knab.sportgeeks.network.json.SearchLocalisation;
 import com.code.knab.sportgeeks.network.json.SearchSportEvent;
 import com.code.knab.sportgeeks.network.json.SportEvent;
 import com.code.knab.sportgeeks.network.model.SportType;
-import com.code.knab.sportgeeks.ui.map.MapMVP;
-import com.code.knab.sportgeeks.ui.map.MapModel;
-import com.code.knab.sportgeeks.ui.map.MapPresenter;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -40,16 +37,16 @@ import androidx.fragment.app.FragmentTransaction;
  * Use the {@link EventsSearchMapFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallback, MapMVP.View {
+public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallback{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private ImageButton eventsSearchMapNextButton;
     private ImageButton eventsSearchMapPrvsButton;
 
     private List<SearchSportEvent> sportEvents = new ArrayList<>();
+    private List<SportEvent> list;
 
-
-    private MapPresenter presenter;
 
     SupportMapFragment mapFragment;
     private static final String ARG_PARAM1 = "param1";
@@ -91,7 +88,6 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        presenter = new MapPresenter(this, new MapModel());
 
         List<LatLng> polygonPoints = new ArrayList<>();
         polygonPoints.add(new LatLng(52.215143, 20.996392));
@@ -102,7 +98,7 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
         LatLng center = new LatLng(52.215211, 20.996617);
         List<SportType> sportTypes = new ArrayList<>();
         sportTypes.add(SportType.BASKETBALL);
-        SearchLocalisation localisation = new SearchLocalisation(1L, "Boisko jndkj", "    ",
+        SearchLocalisation localisation = new SearchLocalisation(1L, "Boisko", "    ",
                 center,
                 polygonPoints,
                 sportTypes
@@ -184,10 +180,6 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
         }
     }
 
-    @Override
-    public void listLoaded(List<SportEvent> list) {
-
-    }
 
     /**
      * This interface must be implemented by activities that contain this
@@ -203,4 +195,23 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
+    private Thread thread = new Thread() {
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(3000);
+                EventsSearchMapFragment.this.list = ((EventsSearchActivity)getActivity()).getList();
+                mapLists();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    private void mapLists() {
+
+    }
+
 }
