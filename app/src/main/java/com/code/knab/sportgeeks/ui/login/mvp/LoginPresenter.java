@@ -13,7 +13,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class LoginPresenter implements LoginMVP.Presenter{
 
-    private static final boolean SIGN_IN_BYPASS = true;
     private FirebaseAuth firebaseAuth;
 
     private LoginMVP.View view;
@@ -32,9 +31,6 @@ public class LoginPresenter implements LoginMVP.Presenter{
     @Override
     public void login(String login, String password) {
 
-        if(SIGN_IN_BYPASS) {
-            view.onLoginSuccessful(1L);
-        } else
         firebaseAuth.signInWithEmailAndPassword(login, password).addOnCompleteListener(task -> {
            if(task.isSuccessful()) {
                compositeDisposable.add(model.getUser(task.getResult().getUser().getUid())
