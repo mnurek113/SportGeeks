@@ -10,5 +10,6 @@ class NetworkApiProvider {
 
     public fun createSignUpApi() = retrofit.create(SignUpApi::class.java)
     public fun createSignInApi() = retrofit.create(SignInApi::class.java)
+    public fun createMyEventsApi() = retrofit.create(MyEventsApi::class.java)
 
 }
