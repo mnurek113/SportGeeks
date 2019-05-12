@@ -38,7 +38,7 @@ public class WelcomePresenter implements WelcomeMVP.Presenter {
 
         @Override
         public void onSuccess(List<SportEvent> sportEventList) {
-
+            view.listLoaded(sportEventList);
         }
 
         @Override

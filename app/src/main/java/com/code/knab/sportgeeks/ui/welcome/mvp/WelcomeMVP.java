@@ -9,7 +9,7 @@ import io.reactivex.Single;
 public interface WelcomeMVP {
 
     interface View {
-
+        void listLoaded(List<SportEvent> list);
     }
 
     interface Presenter {

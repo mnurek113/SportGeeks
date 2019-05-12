@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class LoginPresenter implements LoginMVP.Presenter{
 
-    private static final boolean SIGN_IN_BYPASS = false;
+    private static final boolean SIGN_IN_BYPASS = true;
     private FirebaseAuth firebaseAuth;
 
     private LoginMVP.View view;

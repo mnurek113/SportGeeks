@@ -47,7 +47,6 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
     private void startRegisterActivity() {
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
-        this.finish();
     }
 
 

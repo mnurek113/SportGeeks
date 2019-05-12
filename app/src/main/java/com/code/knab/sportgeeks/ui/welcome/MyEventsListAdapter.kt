@@ -10,7 +10,7 @@ import com.code.knab.sportgeeks.R
 import com.code.knab.sportgeeks.network.json.SportEvent
 import java.util.*
 
-class DeviceListAdapter(context: Context, private val viewResourceId: Int, private val sportEventList: ArrayList<SportEvent>) : ArrayAdapter<SportEvent>(context, viewResourceId, sportEventList) {
+class MyEventsListAdapter(context: Context, private val viewResourceId: Int, private val sportEventList: ArrayList<SportEvent>) : ArrayAdapter<SportEvent>(context, viewResourceId, sportEventList) {
 
     private val layoutInflater: LayoutInflater
 
@@ -25,14 +25,14 @@ class DeviceListAdapter(context: Context, private val viewResourceId: Int, priva
         val sportEvent = sportEventList[position]
 
         if (sportEvent != null) {
-            val deviceName = convertView!!.findViewById<View>(R.id.tvDeviceName) as TextView
-            val deviceAdress = convertView.findViewById<View>(R.id.tvDeviceAddress) as TextView
+            val sportAndDateTextView = convertView!!.findViewById<View>(R.id.tvDeviceName) as TextView
+            val participationNumberTextView = convertView.findViewById<View>(R.id.tvDeviceAddress) as TextView
 
-            if (deviceName != null) {
-                deviceName.text = sportEvent.sportType.polishText + " Data: " + sportEvent.startTime
+            if (sportAndDateTextView != null) {
+                sportAndDateTextView.text = sportEvent.sportType.polishText + " Data: " + sportEvent.startTime
             }
-            if (deviceAdress != null) {
-                deviceAdress.text = sportEvent.participationsNumber.toString()
+            if (participationNumberTextView != null) {
+                participationNumberTextView.text = sportEvent.participationsNumber.toString()
             }
         }
 
