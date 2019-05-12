@@ -141,6 +141,7 @@
             android:hint="Data Rozpoczęcia"
             >
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_in_start_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
@@ -171,9 +172,10 @@
             android:hint="Godzina Rozpoczęcia"
             >
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_in_start_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date"
+                android:inputType="time"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -202,6 +204,7 @@
             android:hint="Data Zakończenia"
             >
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_in_end_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
@@ -232,9 +235,10 @@
             android:hint="Godzina Zakończenia"
             >
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_in_end_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date"
+                android:inputType="time"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
