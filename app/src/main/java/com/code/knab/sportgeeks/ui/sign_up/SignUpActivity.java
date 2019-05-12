@@ -65,7 +65,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpMVP.View 
     }
 
     @Override
-    public void onSignUpSuccessful() {
+    public void onSignUpSuccessful(Long userId) {
         Toast.makeText(this, "HELLLLLLOOOO",Toast.LENGTH_SHORT).show();
 
     }
