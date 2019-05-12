@@ -61,7 +61,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/signUp_button"
+                android:id="@+id/registerButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -75,8 +75,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_toStartOf="@id/signUp_button"
-                android:layout_toLeftOf="@id/signUp_button"
+                android:layout_toStartOf="@id/registerButton"
+                android:layout_toLeftOf="@id/registerButton"
                 android:text="@string/login_button_text" />
 
         </RelativeLayout>

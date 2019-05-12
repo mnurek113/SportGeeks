@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -21,12 +22,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ActivitySearchMapFragment.OnFragmentInteractionListener} interface
+ * {@link EventsSearchMapFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ActivitySearchMapFragment#newInstance} factory method to
+ * Use the {@link EventsSearchMapFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ActivitySearchMapFragment extends Fragment implements OnMapReadyCallback {
+public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallback {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private Button eventsSearchInfoButton;
@@ -41,7 +42,7 @@ public class ActivitySearchMapFragment extends Fragment implements OnMapReadyCal
 
     private OnFragmentInteractionListener mListener;
 
-    public ActivitySearchMapFragment() {
+    public EventsSearchMapFragment() {
         // Required empty public constructor
     }
 
@@ -51,11 +52,11 @@ public class ActivitySearchMapFragment extends Fragment implements OnMapReadyCal
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ActivitySearchMapFragment.
+     * @return A new instance of fragment EventsSearchMapFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ActivitySearchMapFragment newInstance(String param1, String param2) {
-        ActivitySearchMapFragment fragment = new ActivitySearchMapFragment();
+    public static EventsSearchMapFragment newInstance(String param1, String param2) {
+        EventsSearchMapFragment fragment = new EventsSearchMapFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,8 +77,16 @@ public class ActivitySearchMapFragment extends Fragment implements OnMapReadyCal
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_activity_search_map, container, false);
+        View view = inflater.inflate(R.layout.fragment_activity_search_map, container, false);
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        eventsSearchInfoButton = (Button) view.findViewById(R.id.eventsSearchInfoButton);
+        eventsSearchInfoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Going to eventsSearchInfoScreen", Toast.LENGTH_SHORT).show();
+                ((EventsSearchActivity)getActivity()).setEventsSearchViewPager(1);
+            }
+        });
         if (mapFragment ==  null) {
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -85,7 +94,7 @@ public class ActivitySearchMapFragment extends Fragment implements OnMapReadyCal
             ft.replace(R.id.map, mapFragment).commit();
         }
         mapFragment.getMapAsync(this);
-        return v;
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
