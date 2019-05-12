@@ -1,6 +1,7 @@
 package com.code.knab.sportgeeks.ui.welcome.mvp;
 
 import com.code.knab.sportgeeks.network.json.SearchSportEvent;
+import com.code.knab.sportgeeks.network.json.SportEvent;
 import com.code.knab.sportgeeks.utils.SchedulerHolders;
 
 import java.util.List;
@@ -34,11 +35,11 @@ public class WelcomePresenter implements WelcomeMVP.Presenter {
                 .subscribeWith(new MyEventsListObserver()));
     }
 
-    private class MyEventsListObserver extends DisposableSingleObserver<List<SearchSportEvent>> {
+    private class MyEventsListObserver extends DisposableSingleObserver<List<SportEvent>> {
 
         @Override
-        public void onSuccess(List<SearchSportEvent> sportEventList) {
-
+        public void onSuccess(List<SportEvent> sportEventList) {
+            view.listLoaded(sportEventList);
         }
 
         @Override

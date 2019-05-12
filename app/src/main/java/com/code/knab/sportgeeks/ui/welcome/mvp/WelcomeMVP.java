@@ -1,6 +1,7 @@
 package com.code.knab.sportgeeks.ui.welcome.mvp;
 
 import com.code.knab.sportgeeks.network.json.SearchSportEvent;
+import com.code.knab.sportgeeks.network.json.SportEvent;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ import io.reactivex.Single;
 public interface WelcomeMVP {
 
     interface View {
-
+        void listLoaded(List<SportEvent> list);
     }
 
     interface Presenter {
@@ -17,7 +18,7 @@ public interface WelcomeMVP {
     }
 
     interface Model {
-        Single<List<SearchSportEvent>> getEventsList(Long userId);
+        Single<List<SportEvent>> getEventsList(Long userId);
     }
 
 }

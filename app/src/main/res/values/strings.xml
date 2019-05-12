@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SportGeeks</string>
+    <string name="app_name">Sport Geeks</string>
     <string name="hint_login">Adres email</string>
     <string name="login_button_text">Zaloguj</string>
     <string name="signUp_button_text">Rejestracja</string>
