@@ -27,7 +27,8 @@
         <Button
             android:id="@+id/eventsSearchInfoButton"
             android:layout_height="10dp"
-            android:layout_width="20dp"/>
+            android:layout_width="20dp"
+            />
     </fragment>
     <ListView
         android:layout_width="wrap_content"
