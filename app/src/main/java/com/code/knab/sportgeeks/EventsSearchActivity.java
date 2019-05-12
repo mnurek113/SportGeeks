@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -13,7 +14,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class EventsSearchActivity extends AppCompatActivity {
+public class EventsSearchActivity extends AppCompatActivity
+        implements EventsSearchMapFragment.OnFragmentInteractionListener,
+EventsSearchInfoFragment.OnFragmentInteractionListener,
+EventsSearchSurveyFragment.OnFragmentInteractionListener {
 
     private EventsSearchPagerAdapter mEventsSearchPagerAdapter;
     private ViewPager mViewPager;
@@ -42,4 +46,8 @@ public class EventsSearchActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

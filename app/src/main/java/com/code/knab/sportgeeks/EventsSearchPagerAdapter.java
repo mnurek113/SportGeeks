@@ -3,12 +3,13 @@ package com.code.knab.sportgeeks;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventsSearchPagerAdapter extends FragmentStatePagerAdapter {
+public class EventsSearchPagerAdapter extends FragmentPagerAdapter {
 
     private final List<Fragment> eventsSearchFragmentList = new ArrayList<>();
     private final List<String> eventsSearchFragmentTitleList = new ArrayList<>();
