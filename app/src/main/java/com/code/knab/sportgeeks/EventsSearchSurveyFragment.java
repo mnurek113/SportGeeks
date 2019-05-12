@@ -14,12 +14,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link EventSearchSurveyFragment.OnFragmentInteractionListener} interface
+ * {@link EventsSearchSurveyFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link EventSearchSurveyFragment#newInstance} factory method to
+ * Use the {@link EventsSearchSurveyFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EventSearchSurveyFragment extends Fragment {
+public class EventsSearchSurveyFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,7 +31,7 @@ public class EventSearchSurveyFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public EventSearchSurveyFragment() {
+    public EventsSearchSurveyFragment() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class EventSearchSurveyFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment EventSearchSurveyFragment.
+     * @return A new instance of fragment EventsSearchSurveyFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EventSearchSurveyFragment newInstance(String param1, String param2) {
-        EventSearchSurveyFragment fragment = new EventSearchSurveyFragment();
+    public static EventsSearchSurveyFragment newInstance(String param1, String param2) {
+        EventsSearchSurveyFragment fragment = new EventsSearchSurveyFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
