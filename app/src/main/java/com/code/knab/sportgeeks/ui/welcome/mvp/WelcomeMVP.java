@@ -1,6 +1,6 @@
 package com.code.knab.sportgeeks.ui.welcome.mvp;
 
-import com.code.knab.sportgeeks.network.json.SportEvent;
+import com.code.knab.sportgeeks.network.json.SearchSportEvent;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public interface WelcomeMVP {
     }
 
     interface Model {
-        Single<List<SportEvent>> getEventsList(Long userId);
+        Single<List<SearchSportEvent>> getEventsList(Long userId);
     }
 
 }

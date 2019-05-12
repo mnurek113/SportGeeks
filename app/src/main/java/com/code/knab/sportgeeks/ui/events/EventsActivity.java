@@ -2,12 +2,14 @@ package com.code.knab.sportgeeks.ui.events;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.code.knab.sportgeeks.R;
+import com.code.knab.sportgeeks.ui.settings.SettingsActivity;
 import com.code.knab.sportgeeks.ui.welcome.WelcomeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -19,12 +21,12 @@ public class EventsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation_events);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
             switch (item.getItemId()) {
                 case R.id.ic_account:
                     Intent intent = new Intent(EventsActivity.this, WelcomeActivity.class);
@@ -37,7 +39,9 @@ public class EventsActivity extends AppCompatActivity {
                     EventsActivity.this.finish();
                     break;
                 case R.id.ic_setting:
-
+                    Intent intent3 = new Intent(EventsActivity.this, SettingsActivity.class);
+                    startActivity(intent3);
+                    EventsActivity.this.finish();
                     break;
             }
             return false;

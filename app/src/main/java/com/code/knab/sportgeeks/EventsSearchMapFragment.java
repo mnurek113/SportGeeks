@@ -14,9 +14,24 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.code.knab.sportgeeks.network.json.Localisation;
+import com.code.knab.sportgeeks.network.json.LocalisationPoint;
+import com.code.knab.sportgeeks.network.json.SearchLocalisation;
+import com.code.knab.sportgeeks.network.json.SearchLocalisationPoint;
+import com.code.knab.sportgeeks.network.json.SearchSportEvent;
+import com.code.knab.sportgeeks.network.model.SportType;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -32,6 +47,8 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private ImageButton eventsSearchMapNextButton;
     private ImageButton eventsSearchMapPrvsButton;
+
+    private List<SearchSportEvent> sportEvents = new ArrayList<>();
 
 
     SupportMapFragment mapFragment;
@@ -73,6 +90,26 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        List<LatLng> polygonPoints = new ArrayList<>();
+        polygonPoints.add(new LatLng(52.215143, 20.996392));
+        polygonPoints.add(new LatLng(52.215296, 20.996403));
+        polygonPoints.add(new LatLng(52.215279, 20.996852));
+        polygonPoints.add(new LatLng(52.215127, 20.996838));
+
+        LatLng center = new LatLng(52.215211, 20.996617);
+        List<SportType> sportTypes = new ArrayList<>();
+        sportTypes.add(SportType.BASKETBALL);
+        SearchLocalisation localisation = new SearchLocalisation(1L, "Boisko jndkj", "    ",
+                center,
+                polygonPoints,
+                sportTypes
+        );
+
+        sportEvents.add(
+                new SearchSportEvent(1L, "21.4   23:41", null,
+                        localisation, SportType.BASKETBALL, "krzysiek",
+                        5L));
     }
 
     @Override
@@ -82,23 +119,23 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
         View view = inflater.inflate(R.layout.fragment_activity_search_map, container, false);
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         eventsSearchMapNextButton = (ImageButton) view.findViewById(R.id.eventsSearchMapNextScrBtn);
-        eventsSearchMapPrvsButton= (ImageButton) view.findViewById(R.id.eventsSearchMapPrvsScrBtn);
+        eventsSearchMapPrvsButton = (ImageButton) view.findViewById(R.id.eventsSearchMapPrvsScrBtn);
         eventsSearchMapNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Going to eventsSearchInfoScreen", Toast.LENGTH_SHORT).show();
-                ((EventsSearchActivity)getActivity()).setEventsSearchViewPager(1);
+                ((EventsSearchActivity) getActivity()).setEventsSearchViewPager(1);
             }
         });
         eventsSearchMapPrvsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Going to eventsSearchSurveyScreen", Toast.LENGTH_SHORT).show();
-                ((EventsSearchActivity)getActivity()).setEventsSearchViewPager(2);
+                ((EventsSearchActivity) getActivity()).setEventsSearchViewPager(2);
             }
         });
 
-        if (mapFragment ==  null) {
+        if (mapFragment == null) {
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             mapFragment = new SupportMapFragment();
@@ -134,7 +171,15 @@ public class EventsSearchMapFragment extends Fragment implements OnMapReadyCallb
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sportEvents.get(0).localisation.center, 15F));
 
+        for(int i = 0; i < sportEvents.size(); i++) {
+            SearchSportEvent sportEvent = sportEvents.get(i);
+            googleMap.addPolygon(new PolygonOptions()
+                .clickable(false)
+                    .addAll(sportEvent.localisation.polygonPoints));
+            googleMap.addMarker(new MarkerOptions().position(sportEvent.localisation.center).title(sportEvent.localisation.name));
+        }
     }
 
     /**
