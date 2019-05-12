@@ -36,7 +36,8 @@
 
         <activity
             android:name=".EventsSearchActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps">
+        </activity>
 
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
