@@ -93,7 +93,6 @@
                     android:id="@+id/searchEventButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:text="Szukaj" />
 
@@ -101,7 +100,7 @@
                     android:id="@+id/AddEventButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_above="@id/searchEventButton"
+                    android:layout_below="@id/searchEventButton"
                     android:layout_alignParentRight="true"
                     android:text="Dodaj" />
 
