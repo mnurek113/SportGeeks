@@ -34,13 +34,26 @@
             />
     </RelativeLayout>
 
-    <Button
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search_search_button"
         android:layout_height="wrap_content"
-        android:id="@+id/btnTEST"
-        android:text="test 2"/>
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/search_event_sport_container"
+        android:layout_marginBottom="20dp"
+        android:text="Szukaj wydarzeń"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search_add_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/search_search_button"
+        android:text="Dodaj wydarzenie"/>
+
+
+
 
 
 
