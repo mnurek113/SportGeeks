@@ -75,6 +75,6 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeMVP.Vie
     @Override
     public void listLoaded(List<SportEvent> list) {
         myEventsListAdapter = new MyEventsListAdapter(this, R.layout.my_events_adapter_view, (ArrayList<SportEvent>) list);
-
+        myEventsListView.setAdapter(myEventsListAdapter);
     }
 }
