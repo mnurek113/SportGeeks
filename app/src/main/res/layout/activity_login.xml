@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,22 +15,25 @@
         android:clipToPadding="false"
         android:orientation="vertical"
         android:padding="24dp"
-        android:paddingTop="16dp">
+        android:paddingTop="16dp"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="150dp"
-            android:text="@string/app_name"
-            android:textAllCaps="true"
-            android:textSize="16sp" />
+            android:text= "@string/app_name"
+            android:textAllCaps="false"
+            android:textSize="40sp"
+            android:textColor="@color/textColorPrimary"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:hint="@string/hint_login"
+            android:textColorHint="@color/textColorPrimary"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -37,7 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textColor="@color/textColorPrimary"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -47,14 +52,16 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:hint="@string/hint_password"
-            app:errorEnabled="true">
+            app:errorEnabled="true"
+            android:textColorHint="@color/textColorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textColor="@color/textColorPrimary"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:text="@string/signUp_button_text" />
+                android:text="@string/signUp_button_text"
+                />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginButton"
